@@ -330,6 +330,10 @@ return res.status(500).json({
 
 })
 
-app.listen(8000);
+const PORT = process.env.PORT || 8000; // Use the PORT variable from .env or default to 8000
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 module.exports = app;
